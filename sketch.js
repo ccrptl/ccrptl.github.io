@@ -3,7 +3,7 @@ https://vimeo.com/channels/learningp5js/138935677
 */
 //processing based code modified for p5.js
 
-//p5.disableFriendlyErrors = true;
+p5.disableFriendlyErrors = true;
 
 var num = 600,
   frms = 60,
