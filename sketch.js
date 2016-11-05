@@ -6,8 +6,8 @@ https://vimeo.com/channels/learningp5js/138935677
 p5.disableFriendlyErrors = true;
 
 var num = 600,
-  frms = 60,
-  z = 15;
+  frms = 110,
+  z = 20;
 var angle=0, theta=0;
 
 var value = 0;
@@ -15,7 +15,7 @@ var value = 0;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   noStroke();
-  fill(255, 10, 100,90);
+  fill(255, 10, 100);
 }
 
 function windowResized() {
@@ -32,11 +32,11 @@ function mouseClicked() {
 
 function draw() {
      
-  background(255,255,255,75);
+  background(255,255,255);
   
   if(value === 0)
   {
-       fill(255, 10, 100,90);
+       fill(255, 10, 100);
   translate(width/2, height/2);
   // The amount of layers
   for (var j = 20; j < 120; j+=20) {
@@ -74,7 +74,8 @@ function draw() {
 
   var m = height/2;
   for (i = 0; i < z; i++) {
-    f = (i % 2 === 0) ? 230 : 34;
+       
+    f = (i % 2 === 0) ? [255, 10, 100] : 255;
     drawThing(m - (m*.95 / z * i), f, i);
   }
 
