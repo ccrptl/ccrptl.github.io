@@ -32,7 +32,7 @@ function mouseClicked() {
 
 function draw() {
      
-  background(255,255,255);
+  background(0);
   
   if(value === 0)
   {
@@ -75,7 +75,7 @@ function draw() {
   var m = height/2;
   for (i = 0; i < z; i++) {
        
-    f = (i % 2 === 0) ? [255, 10, 100] : 255;
+    f = (i % 2 === 0) ? [255, 10, 100] : 0;
     drawThing(m - (m*.95 / z * i), f, i);
   }
 
