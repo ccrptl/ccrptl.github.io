@@ -7,7 +7,7 @@ p5.disableFriendlyErrors = true;
 
 var num = 600,
      frms = 110,
-     z = 20;
+     z = 16;
 var angle = 0,
      theta = 0;
 
@@ -17,6 +17,7 @@ function setup() {
      createCanvas(windowWidth, windowHeight);
      noStroke();
      fill(255, 10, 100);
+     
 }
 
 function windowResized() {
@@ -34,8 +35,11 @@ function mouseClicked() {
 function draw() {
 
      background(0);
+     
 
      if (value === 0) {
+
+	  
           fill(255, 10, 100);
           translate(width / 2, height / 2);
           // The amount of layers
@@ -74,11 +78,10 @@ function draw() {
           for (i = 0; i < z; i++) {
 
                f = (i % 2 === 0) ? [255, 10, 100] : 0;
-               drawThing(m - (m * .95 / z * i), f, i);
+               drawThing(m - (m * 1 / z * i), f, i);
           }
 
           theta += TWO_PI / frms;
-          //if (frameCount<frms) saveFrame("img/image-###.gif");
      }
 
 }
@@ -92,9 +95,9 @@ function drawThing(diam, col, n) {
      for (var i = 0; i < num; i++) {
           var offSet = PI / z * n;
           var angle = TWO_PI / num * i;
-          var s = 0.7 + 0.4 * sin(sq(offSet) + theta + angle * 4.0);
-          d = 0.25 + 0.2 * pow(s, 0.8);
-          d += 0.08 * pow(0.5 + 0.5 + cos(4 * angle), 1.0);
+          var s = 0.8 + 0.4 * sin(sq(offSet) + theta + angle * 4.0);
+          d = 0.25 + 0.20 * pow(s, 0.8);
+          d += 0.1 * pow(0.5 + 0.5 + cos(4 * angle), 1.0);
           var x = cos(angle) * d * diam;
           var y = sin(angle) * d * diam;
           vertex(x, y);
