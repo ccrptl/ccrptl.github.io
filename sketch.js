@@ -1,6 +1,3 @@
-/*
-https://vimeo.com/channels/learningp5js/138935677
-*/
 //processing based code modified for p5.js
 
 p5.disableFriendlyErrors = true;
@@ -39,7 +36,7 @@ function draw() {
           fill(255, 10, 100);
           translate(width / 2, height / 2);
           // The amount of layers
-          for (var j = 20; j < 120; j += 20) {
+          for (var j = 20; j < 140; j += 20) {
                var h = j * 2 + 5;
                // The amount of shapes per layer
                for (var q = 0; q < 360; q += 30) {
