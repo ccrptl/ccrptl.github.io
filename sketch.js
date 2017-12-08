@@ -33,10 +33,11 @@ function draw() {
      background(0);
 
      if (value === 0) {
+          //fill(255,random(100),100);
           fill(255, 10, 100);
           translate(width / 2, height / 2);
           // The amount of layers
-          for (var j = 20; j < 140; j += 20) {
+          for (var j = 20; j < 120; j += 20) {
                var h = j * 2 + 5;
                // The amount of shapes per layer
                for (var q = 0; q < 360; q += 30) {
