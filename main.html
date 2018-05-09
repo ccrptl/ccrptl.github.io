@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+<script src="echarts.js"></script>    
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Hello World
+      </h1>
+      <p class="subtitle">
+        My first website with <strong>Bulma</strong>!
+      </p>
+    </div>
+
+<div class="columns is-centered">
+<div class="column is-half">
+<div id="main" style="width: null;min-height:400px;"></div>
+
+    <script type="text/javascript">
+        // based on prepared DOM, initialize echarts instance
+        var myChart = echarts.init(document.getElementById('main'));
+
+
+var base = [1];
+var data = [1];
+
+function addData(shift) {
+    base.push(1 + base[base.length - 1]);
+    data.push(1 + data[data.length - 1]);
+
+    if (shift) {
+        base.shift();
+        data.shift();
+    }
+}
+
+for (var i = 1; i < 100; i++) {
+    addData();
+}
+
+option = {
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: base
+    },
+    yAxis: {
+        boundaryGap: [0, '50%'],
+        type: 'value'
+    },
+    series: [
+        {
+            name:'Hello',
+            type:'line',
+            smooth:true,
+            symbol: 'none',
+            stack: 'a',
+            areaStyle: {
+                normal: {}
+            },
+            data: data
+        }
+    ]
+};
+
+
+setInterval(function () {
+    addData(true);
+    myChart.setOption({
+        xAxis: {
+            data: base
+        },
+        series: [{
+            name:'Hello',
+            data: data
+        }]
+    });
+}, 500);
+
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+    </script>
+
+</div>
+</div>
+
+<div class="columns is-centered">
+<div class="column is-half">
+<div id="main1" style="width: null;min-height:400px;"></div>
+
+    <script type="text/javascript">
+        // based on prepared DOM, initialize echarts instance
+        var myChart1 = echarts.init(document.getElementById('main1'));
+
+
+var base = [1];
+var data = [1];
+
+function addData1(shift) {
+    base.push(1 + base[base.length - 1]);
+    data.push(1 + data[data.length - 1]);
+
+    if (shift) {
+        base.shift();
+        data.shift();
+    }
+}
+
+for (var i = 1; i < 100; i++) {
+    addData1();
+}
+
+option = {
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: base
+    },
+    yAxis: {
+        boundaryGap: [0, '50%'],
+        type: 'value'
+    },
+    series: [
+        {
+            name:'Hello',
+            type:'line',
+            smooth:true,
+            symbol: 'none',
+            stack: 'a',
+            areaStyle: {
+                normal: {}
+            },
+            data: data
+        }
+    ]
+};
+
+
+setInterval(function () {
+    addData(true);
+    myChart1.setOption({
+        xAxis: {
+            data: base
+        },
+        series: [{
+            name:'Hello',
+            data: data
+        }]
+    });
+}, 500);
+
+        // use configuration item and data specified to show chart
+        myChart1.setOption(option);
+    </script>
+
+</div>
+</div>
+
+  </section>
+  </body>
+</html>
