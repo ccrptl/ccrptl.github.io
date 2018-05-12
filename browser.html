@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Browser market shares in January, 2018</title>
+		<title>Highcharts Example</title>
 
 		<style type="text/css">
 
@@ -12,10 +12,10 @@
 	<body>
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="/Highcharts-6.1.0/code/highcharts.js"></script>
-<script src="/Highcharts-6.1.0/code/modules/exporting.js"></script>
-<script src="/Highcharts-6.1.0/code/modules/export-data.js"></script>
-		
+<script src="../../code/highcharts.js"></script>
+<script src="../../code/modules/exporting.js"></script>
+<script src="../../code/modules/export-data.js"></script>
+
 <div id="container" style="width: 100%; height: 500px; margin: 0 auto"></div>
 
 <script type="text/javascript">
@@ -25,7 +25,10 @@ Highcharts.chart('container', {
         plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false,
-        type: 'pie'
+        type: 'pie',
+        style: {
+            fontFamily: 'Latin Modern Roman'
+        }
     },
     title: {
         text: 'Browser market shares in January, 2018'
@@ -46,6 +49,15 @@ Highcharts.chart('container', {
                 }
             }
         }
+    },
+     exporting: {
+      chartOptions: {
+        chart: {
+          style: {
+            fontFamily: 'Latin Modern Roman'
+          }
+        }
+      }
     },
     series: [{
         name: 'Brands',
